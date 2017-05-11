@@ -1,0 +1,106 @@
+//============================================= PRZYKŁADOWE ZAPYTANIA Z LINKAMI =========================================//
+Dodawanie filmów  POST:
+http://localhost:8080/restapp/rest/movie
+{
+"title" : "Straznicy Galaktyki",
+"info" : "bla bla bla"
+}
+
+{
+"title" : "Chory Piotrek",
+"info" : "Komnata Jajecznic"
+}
+
+{
+"title" : "Suche gacie na dnie morza",
+"info" : "film paranormalny"
+}
+
+Wyświetlanie filmów GET: 
+http://localhost:8080/restapp/rest/movie
+//--------------------------------------------------------------------------------------
+Dodawanie komentarzy do filmu 1 POST: 
+http://localhost:8080/restapp/rest/movie/1/comments
+{
+"comm" : "Polecam"
+}
+
+{
+"comm" : "Ciekawy film"
+}
+
+{
+"comm" : "Dno leci 1"
+}
+Wyświetlanie komentarzy do filmu nr 1 GET:
+http://localhost:8080/restapp/rest/movie/1/comments
+
+USUWANIE 3 komentarza z filmu nr 1 DELETE: 
+http://localhost:8080/restapp/rest/movie/1/comments/3
+//----------------------------------------------------------------------------------------------
+Dodawanie ocen do filmu nr 1 POST:
+http://localhost:8080/restapp/rest/movie/1/grades
+{
+"grade" : 10
+}
+
+{
+"grade" : 7
+}
+
+{
+"grade" : 1
+}
+
+Wyświetlanie średniej ocen filmu nr 1 GET:
+http://localhost:8080/restapp/rest/movie/1/grades
+
+//--------------------------------------------------------------------------------------------------
+Edycja filmu nr 2 PUT:
+http://localhost:8080/restapp/rest/movie/2
+{
+"title" : "Poprawna nazwa",
+"info" : "Poprawny opis"
+}
+
+Sprawdzenie czy film nr 2 został zaktualizowany GET:
+http://localhost:8080/restapp/rest/movie/1
+
+//-----------------------------------------------------------------------------------------------
+Usunięcie filmu nr. 3 DELETE:
+http://localhost:8080/restapp/rest/movie/3
+//-----------------------------------------------------------------------------------------------
+
+Dodawanie aktora do filmu nr 1 POST:
+http://localhost:8080/restapp/rest/movie/1/actors
+{
+"name" : "Stefan",
+"surname" : "Jakis"
+}
+
+Sprawdzenie czy został dodany GET:
+http://localhost:8080/restapp/rest/movie/1/actors
+
+Dodanie tego samego aktora do filmu nr. 2 POST:
+http://localhost:8080/restapp/rest/movie/2/actors
+{
+"name" : "Stefan",
+"surname" : "Jakis"
+}
+
+teraz używając komendy GET : 
+http://localhost:8080/restapp/rest/actors
+Można zauważyc że jeden aktor gra w 2 filmach.
+//-------------------------------------------------------------------------------------------------
+Stworzenie nowego aktora POST:
+http://localhost:8080/restapp/rest/actors
+{
+"name" : "Jan",
+"surname" : "Kowalski"
+}
+Wyświetlenie aktora o podanym id GET: 
+http://localhost:8080/restapp/rest/actors/2
+//-------------------------------------------------------------------------------------------------
+Wyświetlanie filmów danego aktora GET:
+http://localhost:8080/restapp/rest/actors/1/movies
+http://localhost:8080/restapp/rest/actors/2/movies

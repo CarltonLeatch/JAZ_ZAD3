@@ -1,0 +1,45 @@
+Rafał Ochotny s13911:
+Aplikacja restowa wyświetlajaca informacje o filmach i aktorach a także umożliwia dodawanie, usuwanie i edycję poszczególnych obiektów:
+
+ Wyświetlanie wszystkich filmów:
+Możliwe komendy: GET i POST (Dodawanie i wyświetlanie filmów)
+http://localhost:8080/restapp/rest/movie
+
+Wyświtlanie filmów o podanym id: 
+Możliwe kmendy: GET, PUT, DELETE (wyświetlanie, edycja i usuwanie filmu o podanym ID)
+http://localhost:8080/restapp/rest/movie/{id}
+
+Wyświetlanie komentarzy dla danego filmu
+Możliwe komendy: GET i POST (wyświetlanie i dodawanie komentarzy)
+http://localhost:8080/restapp/rest/movie/{id}/comments
+
+Możliwość usunięcia danego komentarza
+Możliwe komendy : DELETE(usunięcie komentarza)
+http://localhost:8080/restapp/rest/movie/{id}/comments/{commId}
+
+Wyświetlanie średniej oceny dla danego filmu
+Możliwe komendy: GET i POST (wyświetlanie i dodawanie komentarzy)
+!!!UWAGA!!!
+Najpierw należy dodać jakąś ocenę zanim się wejdzie na tą stronę, pnieważ po wejściu bez dodania stworzy w tabeli obiekt "nan" i nie obliczy średniej po późniejszym podaniu ocen.
+http://localhost:8080/restapp/rest/movie/{id}/grades
+
+Dodawanie aktora do konkretnego filmu
+Możliwe Kkomendy: POST i GET (Dodawanie i wyświetlanie aktorów dla konkretnego filmu)
+http://localhost:8080/restapp/rest/movie/{id}/actors
+
+Wyświetlanie wszystkich aktorów:
+Możliwe komendy: POST i GET(Dodawanie i wyświetlanie wszystkich aktorów)
+http://localhost:8080/restapp/rest/actors
+
+Wyświetlanie informacji o danym aktorze
+Możliwe komendy: GET (Wyświetlanie)
+http://localhost:8080/restapp/rest/actors/{ActorID}
+
+Dodawanie filmu do konkretnego aktora
+Możliwe komendy: GET i POST(Wyświetlanie i dodawanie filmów)
+http://localhost:8080/restapp/rest/actors/{ActorId}/movies
+
+Warto zauważyć, że gdy dodamy film do aktora nie tworząc go w:
+http://localhost:8080/restapp/rest/movie
+to zostanie on automatycznie dodany do bazy filmów. Tak samo działa dla aktorów których dodajemy do filmów. :)
+

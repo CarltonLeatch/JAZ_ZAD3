@@ -1,0 +1,6 @@
+link do repo git:
+https://github.com/CarltonLeatch/JAZ_ZAD3.git
+
+plik restapp.war znajduje się w folderze target. proponuję zrobić 
+asadmin deploy target/resapp.war 
+:)
